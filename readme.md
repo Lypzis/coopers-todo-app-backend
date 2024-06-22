@@ -13,8 +13,11 @@ npm install
 Create a `.env` file in the root directory of your project. Add the following environment variables and replace placeholders with your specific values:
 
 PORT=port
+
 MONGO_URI=yourMongoURI
+
 JWT_SECRET=yourSecret
+
 JWT_EXPIRESIN=yourExpirationTime
 
 ## Usage
