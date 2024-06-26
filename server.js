@@ -7,6 +7,12 @@ const authRoutes = require("./routes/auth");
 const todoRoutes = require("./routes/todos");
 const emailRoutes = require("./routes/email");
 
+// Allow requests from specific origin
+const corsOptions = {
+  origin: process.env.ALLOWED_ACCESS_ORIGIN,
+  optionsSuccessStatus: 200, // For legacy browser support
+};
+
 // Load environment variables
 dotenv.config();
 
@@ -17,9 +23,9 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-if (process.env.NODE_ENV === "development") {
-  app.use(cors()); // Enable CORS only in development mode
-}
+
+// Use cors middleware with options
+app.use(cors(corsOptions));
 
 // Routes
 app.use("/api/auth", authRoutes);
