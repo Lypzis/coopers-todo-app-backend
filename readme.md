@@ -20,6 +20,16 @@ JWT_SECRET=yourSecret
 
 JWT_EXPIRESIN=yourExpirationTime
 
+EMAIL_HOST=host
+
+EMAIL_PORT=port
+
+EMAIL_USER=user
+
+EMAIL_PASS=password
+
+EMAIL_RECIPIENT=emailRecipient
+
 ## Usage
 
 ### Running in Production
@@ -41,6 +51,8 @@ npm run dev
 - **express**: Fast, unopinionated, minimalist web framework for Node.js.
 - **jsonwebtoken**: JSON Web Token (JWT) implementation for generating and verifying tokens.
 - **mongoose**: MongoDB object modeling tool designed to work in an asynchronous environment.
+- **nodemailer**: Module to send emails easily from your server.
+- **cors**: Package to enable CORS (Cross-Origin Resource Sharing) with various options.
 
 ## License
 

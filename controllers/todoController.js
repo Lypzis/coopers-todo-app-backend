@@ -80,3 +80,18 @@ exports.deleteTodo = async (req, res) => {
     res.status(500).json({ error: "Failed to delete todo" });
   }
 };
+
+exports.deleteAll = async (req, res) => {
+  try {
+    const { done } = req.query;
+    if (done === undefined) {
+      return res
+        .status(400)
+        .json({ error: 'Query parameter "done" is required' });
+    }
+    await ToDo.deleteMany({ done: done === "true" });
+    res.status(200).json({ message: "Todos deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to delete todos" });
+  }
+};
